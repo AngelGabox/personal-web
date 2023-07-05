@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import Button from "../Bottom/Button.jsx"
 import photo_1 from "../../assets/original_photo.png"
 import photo_2 from "../../assets/photo002.png"
 import photo_3 from "../../assets/photo_Draw.jpg"
@@ -56,6 +57,7 @@ export default function Picture(){
 
   return (
     <>
+        <Button></Button>
         <div className='container' ref={containerRef}>
           <div className={intervalActivo? "box animated" : "box" } onClick={intervalActivo?detenerIntervalo: iniciarIntervalo}>
               <img className="picture" src={photos[index]} alt="photo_1" ref={myPhotoRef} />

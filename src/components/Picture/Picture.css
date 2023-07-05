@@ -29,8 +29,10 @@
     width: 10px;
     height: 100%;
     border-radius: 10px;
-    background-color: var(--border-color-picture);
-    filter: drop-shadow(0 0 15px var(--border-color-picture));
+    /* background-color: var(--border-color-picture); */
+    /* filter: drop-shadow(0 0 15px var(--border-color-picture)); */
+    background-color: var(--marine-blue);
+    filter: drop-shadow(0 0 10px var(--marine-blue));
     z-index: 10px;
 }
 #root .containerAnimated::after, #root .containerAnimated::before
