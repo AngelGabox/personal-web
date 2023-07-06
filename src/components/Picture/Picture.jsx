@@ -1,25 +1,25 @@
 import React, { useEffect, useRef, useState } from 'react'
-import Button from "../Bottom/Button.jsx"
 import photo_1 from "../../assets/original_photo.png"
-import photo_2 from "../../assets/photo002.png"
+// import photo_2 from "../../assets/original_photo"
 import photo_3 from "../../assets/photo_Draw.jpg"
-import photo_4 from "../../assets/prety_photo.jpg"
+import photo_4 from "../../assets/pretty_photo.png"
 import photo_5 from "../../assets/simpson_photo.png"
 import photo_6 from "../../assets/photo001.png"
+// import PlayPicture from "../Bottom/PlayPicture"
+import "../Bottom/Button.css"
 import "./Picture.css"
 
 export default function Picture(){ 
 
-  const photos = [photo_1, photo_5, photo_3, photo_4, photo_2, photo_6]
+  const photos = [photo_1, photo_5, photo_3, photo_4, photo_6]
   const [index, setIndex] = useState(0)// Indice para el array de imagenes
   const [intervalId, setIntervalId] = useState(null);
   const [intervalActivo, setIntervalActivo] = useState(false);
-  const myPhotoRef= useRef(null)
   const containerRef = useRef(null)
   const loadingRef = useRef(null)
 
   function iniciarIntervalo() {
-    containerRef.current.s
+    // containerRef.current.s
     if (!intervalActivo) {
       loadingRef.current.style.display = "block"
       setTimeout(() => {
@@ -32,6 +32,7 @@ export default function Picture(){
        }, 5000);
       setIntervalId(id);
       setIntervalActivo(true);
+      console.log("start interval");
     }
   }
   function detenerIntervalo() {
@@ -42,12 +43,13 @@ export default function Picture(){
       clearInterval(intervalId);
       setIntervalId(null);
       setIntervalActivo(false);
+      console.log("stop interval");
     }
   }
   
   useEffect(()=>{
     let interval = null;
-    if(index >= 6){
+    if(index >= photos.length){
       setIndex(0)
     }
     return ()=>{
@@ -56,15 +58,27 @@ export default function Picture(){
   }, [intervalActivo, index])
 
   return (
-    <>
-        <Button></Button>
+    <section className='section-picture'>
+        <h2 className='name'>Hello World, I'm Angel</h2>
         <div className='container' ref={containerRef}>
-          <div className={intervalActivo? "box animated" : "box" } onClick={intervalActivo?detenerIntervalo: iniciarIntervalo}>
-              <img className="picture" src={photos[index]} alt="photo_1" ref={myPhotoRef} />
+          <div className={intervalActivo? "box animated" : "box" }  
+          // onClick={intervalActivo?detenerIntervalo:iniciarIntervalo}
+          >
+              <img className="picture" src={photos[index]} alt="photo_1" />
           </div>
             <h3 ref={loadingRef} className='loading' 
             >Loading</h3>
         </div>
-    </>
+        <div className='play' >
+          <label >
+            <input type="checkbox" name="check" />
+            <span ></span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"  height="2em">
+                    <path d="M3 22v-20l18 10-18 10z" />
+                </svg>
+          </label>
+          <div className='funcion' onClick={intervalActivo?detenerIntervalo:iniciarIntervalo}></div>
+        </div>
+    </section>
   )
 }

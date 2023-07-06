@@ -1,3 +1,19 @@
+.section-picture
+{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 80px;
+  width: 100%;
+}
+.name
+{
+  margin-top: 10px;
+  font-size: 2.5rem;
+  font-weight:bold;
+}
 .container, .containerAnimated
 {
   position: relative;
@@ -33,14 +49,14 @@
     /* filter: drop-shadow(0 0 15px var(--border-color-picture)); */
     background-color: var(--marine-blue);
     filter: drop-shadow(0 0 10px var(--marine-blue));
-    z-index: 10px;
+    z-index: 10;
 }
-#root .containerAnimated::after, #root .containerAnimated::before
+.main .containerAnimated::after, .main  .containerAnimated::before
 {
     /* transition: all 2s; */
     animation: activated 3s linear;
 }
-#root .container::before, #root .containerAnimated::before{
+.main .container::before, .main .containerAnimated::before{
   left: -5px;
 }
 @keyframes transitionImage 
@@ -75,7 +91,12 @@
   width: 250px;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
+  z-index: 1;
+}
+.containerAnimated .picture
+{
+  filter: drop-shadow(0 0 10px #ffffff2f );
+  transition: filter 4s;
 }
 .loading
 {
@@ -85,4 +106,5 @@
     left: calc(50% - 56px);
     font-size: 3rem;
     filter: drop-shadow(0 0 10px #000);
+    z-index: 5;
 }

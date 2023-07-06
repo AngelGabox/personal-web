@@ -1,0 +1,20 @@
+.technologies
+{
+    padding: 0 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0px;
+    width: 100%;
+}  
+  .grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.technologies svg
+{
+    width: 100px;
+    height: 100px;
+    fill: #fff;
+}
