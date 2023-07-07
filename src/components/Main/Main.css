@@ -9,4 +9,7 @@
     margin: 0 auto;
     text-align: center;
     color: rgba(255, 255, 255, 0.87);
+    /* filter: blur(30px); */
+    z-index: -1;
+    padding-bottom: 20px;
 }

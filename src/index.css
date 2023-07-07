@@ -3,9 +3,12 @@
   --font-size-small: 1rem;
   --font-size-medium: 2.5rem;
   --font-size-high: 5rem;
-  --color-font-light: #fff;
   --color-font-light-grey: #ddd;
   --color-font-grey: #888;
+  --black: #201e1c;
+  --warm-black: #292520;
+  --just-white: #fff;
+  --off-white: #faf8f7;
   --marine-blue: #00ffe2;
 }
 *{
@@ -23,7 +26,7 @@ body{
 }
 .app
 {
-    background-color: #111;
+    background-color: var(--black);
     min-width: 320px;
     min-height: 100vh;
 }
