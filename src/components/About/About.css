@@ -26,6 +26,11 @@
     color: rgb(255, 92, 0);
     /* filter: drop-shadow(0 0 2px rgba(255, 92, 0, 0.8)); */
   }
+  .app--light-mode  .about p strong
+  {
+    color: #7700ff;
+    filter: drop-shadow(0 0 2px rgba(255, 0, 225, 0.8));
+  }
   
   .about p em {
     font-style: italic;

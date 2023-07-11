@@ -32,7 +32,6 @@ export default function Picture(){
        }, 5000);
       setIntervalId(id);
       setIntervalActivo(true);
-      console.log("start interval");
     }
   }
   function detenerIntervalo() {
@@ -43,7 +42,6 @@ export default function Picture(){
       clearInterval(intervalId);
       setIntervalId(null);
       setIntervalActivo(false);
-      console.log("stop interval");
     }
   }
   

@@ -13,7 +13,7 @@
 {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 70px;
     z-index: 5;
     cursor: pointer;
 }
@@ -36,7 +36,10 @@ label span
     position: absolute;
     width: 100%;
     height: 70px;
-    background: linear-gradient(#fff, #ebf5fc, #ebf5fc);
+    /* background: linear-gradient(#ff5100,#ff783a, #ff996a); */
+    /* background: linear-gradient( #ff996a, #ff5100, #ff996a); */
+    /* background-image: var(--gradient-one); */
+    background: var(--gradient-fourth);
     border-radius: 60px;
     box-shadow: inset 0 6px 0 0 rgba(0,0,0,0.2),
     0 5px 15px 0 rgba(255,255,255,0.2),
@@ -48,19 +51,19 @@ label svg
     position: relative;
     top: 3px;
     font-size: 1.5rem;
-    fill: #8db4b5;
+    fill: #05050590;
     filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.133)) 
     drop-shadow(0 0 8px rgba(0, 0, 0, 0.133))
     drop-shadow(0 0 12px rgba(0, 0, 0, 0.133))
     drop-shadow(0 0 16px rgba(0, 0, 0, 0.133));
 }
-label input:checked ~ span 
+.app label input ~ span 
 {
     box-shadow: inset 0 -6px 0 0 rgba(0, 0, 0, 0.4),
     0 2px 10px rgba(0, 0, 0, 0.2);
     background: linear-gradient(#2b6b73, #31727a, #2b6b73);
 }
-label input:checked ~ svg
+.app label input ~ svg
 {
     top: -3px;
     color: #fff;

@@ -1,15 +1,21 @@
 :root{
+  --black: #201e1c;
   --border-color-picture: #40c1fb;
+  --bubble-dark-mode: #ff5500;
+  --bubble-light-mode: aqua;
+  --color-font-light-grey: #ddd;
+  --color-font-grey: #888;
   --font-size-small: 1rem;
   --font-size-medium: 2.5rem;
   --font-size-high: 5rem;
-  --color-font-light-grey: #ddd;
-  --color-font-grey: #888;
-  --black: #201e1c;
-  --warm-black: #292520;
+  --gradient-one: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+  --gradient-two: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+  --gradient-three: linear-gradient(180deg, #2af598 0%, #009efd 100%);
+  --gradient-fourth:  linear-gradient(120deg, #58ffc5 0%, #b16dff 100%);
   --just-white: #fff;
-  --off-white: #faf8f7;
   --marine-blue: #00ffe2;
+  --off-white: #faf8f7;
+  --warm-black: #292520;
 }
 *{
   padding: 0;
@@ -24,13 +30,18 @@ body{
   /* overflow-x: hidden; */
   padding: 0;
 }
-.app
+.app, .app--light-mode
 {
     background-color: var(--black);
     min-width: 320px;
     min-height: 100vh;
     overflow: hidden;
-    z-index: -1;
+    z-index: -10;
+}
+.app--light-mode
+{
+  /* background-color: var(--just-white); */
+  background-color: #f5f5f5;
 }
 h1 {
   font-size: 3.2em;

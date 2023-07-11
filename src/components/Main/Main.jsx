@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import Button from '../Bottom/Button'
 import { useSpring, animated } from '@react-spring/web'
 import "./Main.css"
@@ -7,14 +7,14 @@ const divGenerator = (styles)=>{
   const bubbles = []
   const numberDivs = Math.floor(Math.random() * 10)
   for (let i = 0; i < numberDivs; i++) {
-    bubbles.push(<animated.div key={i} className={i<(numberDivs/2)?"bubble-one":"bubble-two"}></animated.div>)
+    bubbles.push(<animated.div key={i} className={i<(numberDivs/2)?"bubble-one infinite":"bubble-two infinite"}></animated.div>)
   }
   return bubbles;
 }
 
 
 
-function Main({children}) {
+function Main({appRef, children}) {
     const mainRef= useRef(null) 
     const styles = useSpring({
       loop: true,
@@ -36,7 +36,7 @@ function Main({children}) {
       <div className="lamp">
         {divGenerator()}
       </div>
-        <Button></Button>
+        <Button appRef={appRef}></Button>
         {children}
     </main>
   )
