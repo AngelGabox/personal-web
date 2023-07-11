@@ -1,35 +1,65 @@
-import React, { useRef, useState } from 'react'
-import image_1 from "../../assets/image_4.jpeg"
-import image_2 from "../../assets/image_2.jpeg"
-import image_3 from "../../assets/image_3.jpeg"
-import image_4 from "../../assets/image_1.webp"
+import React, { useState } from 'react'
 import "./Carousel.css"
+import piCountries from "../../assets/projects/piCountries.png"
+import piDogs from "../../assets/projects/PIDogs.png"
+import data from './data'
+import {
+  useTransition,
+  useSpring,
+  useChain,
+  config,
+  animated,
+  useSpringRef,
+} from '@react-spring/web'
 
-function Carousel() {
+const projects = [
+  piCountries,
+  piDogs
+]
 
-    const carruselItemsRef = useRef([])
-    const [currentIndex, setCurrentIndex] = useState(0)  
 
-    function mostrarSiguienteItem() {
-        if(carruselItemsRef.current[currentIndex]){
-            carruselItemsRef.current[currentIndex].classList.remove('active');
-            let i = (currentIndex + 1) % 4
-            setCurrentIndex(i) 
-            carruselItemsRef.current[i].classList.add('active');
-        } 
-        console.log(carruselItemsRef.current)
-        console.log(currentIndex);
-    }
+export default function App() {
+  const [open, set] = useState(false)
 
-    // setInterval(mostrarSiguienteItem, 3000); 
+  const springApi = useSpringRef()
+  const { size, ...rest } = useSpring({
+    ref: springApi,
+    config: config.stiff,
+    from: { size: '20%', border: "2px solid hotpink" },
+    to: {
+      size: open ? '100%' : '20%',
+    },
+  })
+
+  const transApi = useSpringRef()
+  const transition = useTransition(open ? data : [], {
+    ref: transApi,
+    trail: 400 / data.length,
+    from: { opacity: 0, scale: 0 },
+    enter: { opacity: 1, scale: 1 },
+    leave: { opacity: 0, scale: 0 },
+  })
+
+  // This will orchestrate the two animations above, comment the last arg and it creates a sequence
+  useChain(open ? [springApi, transApi] : [transApi, springApi], [
+    0,
+    open ? 0.1 : 0.6,
+  ])
+
   return (
-    <div className='carrusel' onClick={mostrarSiguienteItem}>
-        <img ref={(elemento) => carruselItemsRef.current.push(elemento)} className="carrusel__item active" src={image_1} alt="Imagen 1"/>
-        <img ref={(elemento) => carruselItemsRef.current.push(elemento)} className="carrusel__item" src={image_2} alt="Imagen 2"/>
-        <img ref={(elemento) => carruselItemsRef.current.push(elemento)} className="carrusel__item" src={image_3} alt="Imagen 3"/>
-        <img ref={(elemento) => carruselItemsRef.current.push(elemento)} className="carrusel__item" src={image_4} alt="Imagen 3"/>
+    <div className={"wrapper"}>
+      <animated.div
+        style={{ ...rest, width: size, height: size }}
+        className={"container-projects"}
+        onClick={() => set(open => !open)}>
+        {transition((style, item) => (
+          <animated.div
+            className={"item"}
+            style={{ ...style, background: item.css }}>
+            {/* <img src={projects[item.css]} alt="" /> */}
+          </animated.div>
+        ))}
+      </animated.div>
     </div>
   )
 }
-
-export default Carousel

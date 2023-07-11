@@ -108,3 +108,13 @@
     filter: drop-shadow(0 0 10px #000);
     z-index: 5;
 }
+.play
+{
+    position: relative;
+    top: 20px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}

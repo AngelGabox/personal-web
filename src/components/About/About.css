@@ -5,6 +5,7 @@
     border-left: none;
     border-right: none;
     /* filter: blur(25px); */
+    z-index: 1;
   }
   
   .about h2 {

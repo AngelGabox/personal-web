@@ -1,0 +1,88 @@
+.footer
+{
+    position: relative;
+    /* max-width: 1440px; */
+    /* top: 10px; */
+    max-height: 500px;
+    min-height: 50px;
+    margin: 0 auto;
+    z-index: 0;
+    filter: blur(15px);
+}
+.flama
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    background-color: #ff5100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: rotateX(20deg);
+    animation: lava 40s infinite;
+    z-index: 10;
+}
+.flama_1
+{
+    width: 100%;
+    height: 200px;
+    /* bottom: 0; */
+}
+.flama_1 svg
+{
+    position: absolute;
+    bottom:  0;
+    /* object-fit: contain; */
+}
+.flama_2
+{
+    width: 100%;
+    height: 100px;
+}
+.flama_2 svg
+{
+    position: absolute;
+    top: 0;
+}
+@keyframes lava {
+    10%
+    {
+        transform: rotateX(50deg);
+    }
+    20%
+    {
+        transform: rotateX(100deg);
+    }
+    35%
+    {
+        transform: rotateX(180deg);
+    }
+    40%
+    {
+        transform: rotateX(150deg);
+    }
+    50%
+    {
+        transform: rotateX(170deg);
+    }
+    65%
+    {
+        transform: rotateX(90%);
+    }
+    75%
+    {
+        transform: rotateX(0deg);
+    }
+    85%
+    {
+        transform: rotateX(40deg);
+    }
+    100%
+    {
+        transform: rotateX(20deg);
+    }
+}
+
+
