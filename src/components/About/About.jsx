@@ -5,24 +5,23 @@ function About() {
   return (
     <section className='about'>
       <h2 className='about--title'>About me</h2>
-            <p>¡Bienvenid@ a mi página web! Soy un apasionado programador web con experiencia en el desarrollo de sitios y aplicaciones. Mi objetivo es crear soluciones digitales innovadoras y funcionales que satisfagan a los clientes de los proyectos en los que </p>
+            <p>Welcome to my website! I'm a passionate web developer with experience in building websites and applications. My goal is to create innovative and functional digital solutions that satisfy my clients.</p>
             
             <br />
             <div className='about-divider'></div> 
             <br />
             
-            <p>Con sólidas habilidades en lenguajes de programación como <strong>HTML, CSS</strong> y <strong>JavaScript</strong>, framework popular <strong>React</strong>, puedo crear sitios web dinámicos y atractivos que brinden una excelente experiencia de usuario.             </p>
-            
+            <p>With strong skills in programming languages such as <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong> , as well as popular framework <strong>React</strong>, I can create dynamic and engaging websites that provide an excellent user experience. </p>            
             <br />
             <div className='about-divider'></div>
             <br/>
-           <p>Me enorgullece brindar un servicio confiable y dedicado. Si estás buscando un desarrollador web de confianza, estás en el lugar correcto. </p>
+           <p>I take pride in providing reliable and dedicated service. If you're looking for a trustworthy web developer, you've come to the right place.</p>
            
            <br />
            <div className='about-divider'></div>
            <br />
             <p>
-            No dudes en explorar mi portfolio para ver algunos de mis trabajos anteriores y contáctame para discutir cómo puedo ayudarte a alcanzar tus metas en línea. Estoy emocionado de trabajar contigo y llevar tu proyecto al siguiente nivel.
+            Feel free to explore my portfolio to see some of my previous work, and don't hesitate to contact me to discuss how I can help you achieve your online goals. I'm excited to work with you and take your project to the next level.
             </p>
         </section> 
   )
