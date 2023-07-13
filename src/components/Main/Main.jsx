@@ -7,7 +7,13 @@ const divGenerator = (styles)=>{
   const bubbles = []
   const numberDivs = Math.floor(Math.random() * 10)
   for (let i = 0; i < numberDivs; i++) {
-    bubbles.push(<animated.div key={i} className={i<(numberDivs/2)?"bubble-one infinite":"bubble-two infinite"}></animated.div>)
+    const x = Math.floor(Math.random() * 100)
+    const y = Math.floor(Math.random() * 100)
+    const styles = {
+      top: `${y}%`,
+      left: `${x}`
+    }
+    bubbles.push(<animated.div key={i} className={i<(numberDivs/2)?"bubble-one infinite":"bubble-two infinite"} style={styles}></animated.div>)
   }
   return bubbles;
 }
